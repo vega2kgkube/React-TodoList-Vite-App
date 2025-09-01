@@ -49,6 +49,13 @@ class App extends Component {
     });
   }; //handleToggle
 
+  handleRemove = (id) => {
+    const { todos } = this.state;
+    this.setState({
+      todos: todos.filter(todo => todo.id !== id)
+    });
+  }; //handleRemove
+
   render() {
     const { todo, todos } = this.state;
     const { handleChange, handleCreate, handleEnter, handleToggle } = this;
