@@ -3,18 +3,22 @@ import PropTypes from 'prop-types';
 import TodoItem from './TodoItem';
 
 class TodoItemList extends Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.myTodos !== nextProps.myTodos;
+    }
+
     render() {
         const { myTodos, myToggle, myRemove } = this.props;
         /*
            const { id,text,checked } = todo;
         */
         const todoList = myTodos.map(({ id, text, checked }) => (
-            <TodoItem id={id} 
-                      text={text} 
-                      checked={checked} 
-                      onToggle={myToggle} 
-                      onRemove={myRemove}
-                      key={id}
+            <TodoItem id={id}
+                text={text}
+                checked={checked}
+                onToggle={myToggle}
+                onRemove={myRemove}
+                key={id}
             />
         ));
         return (
