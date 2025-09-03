@@ -45,5 +45,5 @@ export default connect(
     //store에 저장된 todos를 가져와서 myTodos 프로퍼티에 매핑하기
     (state) => ({myTodos: state.todos}),
     //action함수를 dispatch 하는 함수를 getTodos 프로퍼티에 매핑하기
-    {getTodos: fetchAllTodos } // fetchAllTodos 프로터티에 매핑한다면 { fetchAllTodos }
+    { getTodos: fetchAllTodos } // fetchAllTodos 프로터티에 매핑한다면 { fetchAllTodos }
 )(TodoItemList);
